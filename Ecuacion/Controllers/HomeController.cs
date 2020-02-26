@@ -15,15 +15,25 @@ namespace Ecuacion.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+       public IActionResult Ecuacion()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpPost]
+        public IActionResult Ecuacion(int numero1, int numero2, int numero3)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var resultado1 = -numero2 + ((Math.Sqrt(((numero2 * numero2) - (4 * numero1 * numero3)))));
+            var resultado2 = -numero2 - ((Math.Sqrt(((numero2 * numero2) - (4 * numero1 * numero3)))));
+
+            ViewBag.resultado1 = resultado1;
+            ViewBag.resultado2 = resultado2;
+            ViewBag.Dividendo = numero1*2;
+
+            return View("Resultado");
         }
+
     }
+
 }

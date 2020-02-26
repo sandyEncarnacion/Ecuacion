@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewData["Title"] = "Ecuacion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ecuacion 2do grado</title>
+</head>
+<body>
+    <h2> Introduzca los numero para realizar la ecuacuacion<br /> </h2>
+    
+
+    <div>
+        <form action="/Home/Ecuacion" method="post">
+
+            <label for="Num1"> Numero 1</label>
+            <input required="" id="Num1" type="number" name="numero1" value="" />
+
+            <label for="Num2"> Numero 2</label>
+            <input required="" id="Num2" type="number" name="numero2" value="" />
+
+            <label for="Num3"> Numero 3</label>
+            <input required="" id="Num3" type="number" name="numero3" value="" />
+
+
+            <button type="submit"> Calcular </button>
+            <button type="reset"> Limpiar </button>
+
+
+        </form>
+    </div>
+
+</body>
+</html>
